@@ -1,0 +1,25 @@
+#
+# Copyright (c) 2020 Nordic Semiconductor ASA
+#
+# SPDX-License-Identifier: LicenseRef-BSD-5-Clause-Nordic
+#
+
+menu "IFTTT Sample Settings"
+
+config IFTTT_KEY
+	string "IFTTT Key"
+	default ""
+
+config IFTTT_EVENT
+	string "IFTTT Event"
+	default "nRF9160"
+
+endmenu
+
+module = IFTTT
+module-str = IFTTT sample
+source "${ZEPHYR_BASE}/subsys/logging/Kconfig.template.log_config"
+
+menu "Zephyr Kernel"
+source "Kconfig.zephyr"
+endmenu
